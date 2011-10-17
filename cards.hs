@@ -1,3 +1,4 @@
+module Cards where
 -- Card module
 
 data Suit = Spades | Hearts | Diamonds | Clubs
