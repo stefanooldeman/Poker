@@ -1,5 +1,6 @@
 module Deck where 
 
+import System.IO.Unsafe
 import System.Random
 import Data.Map
 
@@ -22,3 +23,6 @@ shuffleDeck xs = shuffle' xs (length xs)
 choose _ []     = error "choose: index out of range"
 choose 0 (x:xs) = (x, xs)
 choose i (x:xs) = let (y, ys) = choose (i - 1) xs in (y, x:ys)
+
+parse_deck :: IO Deck -> Deck
+parse_deck io = unsafePerformIO io
