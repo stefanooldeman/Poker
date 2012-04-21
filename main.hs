@@ -1,3 +1,7 @@
 module Main where
-import Deck
 
+import Cards
+import Deck
+import Hands
+
+-- write main IO 

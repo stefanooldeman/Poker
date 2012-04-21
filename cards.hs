@@ -2,7 +2,7 @@ module Cards where
 -- Card module
 
 data Suit = Spades | Hearts | Diamonds | Clubs
-    deriving (Eq, Enum)
+    deriving (Ord, Eq, Enum)
 
 instance Show Suit where
     show Spades = "S"
