@@ -34,4 +34,10 @@ data Card = Card {value :: Value, suit :: Suit}
 instance Show Card where
     show (Card value suit) = show value ++ show suit
 
+instance Ord Card where
+    a > b = value a > value b
+    a < b = value a < value b
+    a <= b = value a < value b ||  a == b
+    a >= b = value a > value b ||  a == b
+
 -- next module Deck

@@ -3,6 +3,7 @@ module Deck where
 import System.IO.Unsafe
 import System.Random
 import Data.Map
+import Data.List
 
 import Cards
 
@@ -29,5 +30,5 @@ shuffleDeck xs = parse_deck $ shuffle' xs (length xs)
         parse_deck io = unsafePerformIO io
 
 dealNCards :: Int -> Deck -> ([Card], Deck)
-dealNCards n xxs = splitAt n $ shuffleDeck xxs
+dealNCards n xxs = (sort $ take n xxs, shuffleDeck $ drop n xxs)
 
